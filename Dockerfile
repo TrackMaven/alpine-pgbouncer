@@ -24,6 +24,9 @@ ADD templates/* /templates/
 RUN chown -R pgbouncer /etc/pgbouncer && chown -R pgbouncer /templates
 ADD bin/start.sh /start.sh
 ADD bin/generate_config.py /generate_config.py
+USER root
+ADD https://github.com/upfluence/etcdenv/releases/download/v0.3.3/etcdenv-linux-amd64-0.3.3 /usr/bin/etcdenv
+RUN chmod +x /usr/bin/etcdenv
 USER pgbouncer
 VOLUME /etc/pgbouncer
 EXPOSE 6432

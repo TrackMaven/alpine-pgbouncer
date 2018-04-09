@@ -23,6 +23,16 @@ do
      sleep 5
 done
 
+if [ -z "$PGB_DB_PASS"]; then
+    echo "PGB_DB_PASS not set"
+    exit 1
+fi
+
+if [ -z "$PGB_USERLIST"]; then
+    echo "PGB_USERLIST not set"
+    exit 1
+fi
+
 chown -R pgbouncer /etc/pgbouncer
 /usr/bin/pgbouncer /etc/pgbouncer/pgbouncer.ini
 echo "PGBouncer exited with code $?"
