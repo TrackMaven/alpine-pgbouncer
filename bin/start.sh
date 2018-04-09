@@ -23,12 +23,12 @@ do
      sleep 5
 done
 
-if [ -z "$PGB_DB_PASS"]; then
+if [ -z "$PGB_DB_PASS" ]; then
     echo "PGB_DB_PASS not set"
     exit 1
 fi
 
-if [ -z "$PGB_USERLIST"]; then
+if [ -z "$PGB_USERLIST" ]; then
     echo "PGB_USERLIST not set"
     exit 1
 fi
